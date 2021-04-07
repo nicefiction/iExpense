@@ -3,11 +3,12 @@
 import Foundation
 
 /**
- `SOURCE : https://www.hackingwithswift.com/books/ios-swiftui/sharing-swiftui-state-with-observedobject`
+ DAY 26
+ https://www.hackingwithswift.com/books/ios-swiftui/sharing-swiftui-state-with-observedobject
  
  If you want to use a class with your SwiftUI data
  – which you will want to do if that data should be shared across more than one view –
- then SwiftUI gives us two property wrappers that are usefu l:
+ then SwiftUI gives us two property wrappers that are useful :
  `@ObservedObject` and `@EnvironmentObject` .
  We’ll be looking at environment objects later on ,
  but for now let’s focus on observed objects .
