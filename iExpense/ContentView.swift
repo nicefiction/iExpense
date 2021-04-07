@@ -9,17 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     
-     // ////////////////////////
-    //  MARK: PROPERTY WRAPPERS
+     // /////////////////
+    //  MARK: PROPERTIES
     
-    // @State private var human: Human = Human()
-    @ObservedObject var human: Human = Human() // STEP 3 of 3
-    /**
-     `NOTE` : I have removed the `private` access control there ,
-     but whether or not you use it depends on your usage
-     – if you are intending to share that object with other views
-     then marking it as `private` will just cause confusion .
-     */
+    @State private var numbersArray = Array<Int>()
+    @State private var currentNumber: Int = 1
     
     
      // //////////////////////////
@@ -27,27 +21,39 @@ struct ContentView: View {
     
     var body: some View {
         
-        VStack {
-            Text("My name is")
-            Text("\(human.firstName) \(human.lastName)")
-                .font(.largeTitle)
-            Spacer()
-            HStack {
-                Text("First name :")
-                    .foregroundColor(.gray)
-                TextField("My first name" ,
-                          text : $human.firstName)
+        NavigationView { // Deleting items from a list : STEP 4 of 5
+            VStack {
+                List {
+                    /**
+                     `GOTCHA` : The `onDelete()` modifier only exists on `ForEach` ,
+                     so if we want users to delete items from a list
+                     we must put the items inside a `ForEach` .
+                     */
+                    ForEach(numbersArray , id : \.self) { (number: Int) in
+                        Text("\(number)")
+                    } // Deleting items from a list : STEP 1 of 5
+                    .onDelete(perform : removeRows) // Deleting items from a list : STEP 3 of 5
+                }
+                Button(action : { () -> Void in
+                    numbersArray.append(currentNumber)
+                    currentNumber += 1
+                    
+                } , label : {
+                    Text("Add Row")
+                })
             }
-            HStack {
-                Text("Last name :")
-                    .foregroundColor(.gray)
-                TextField("My last name" ,
-                          text : $human.lastName)
-            }
-            Spacer()
+            .navigationBarItems(trailing: EditButton()) // Deleting items from a list : STEP 5 of 5
         }
-        .padding()
     }
+    
+    
+     // ////////////////////
+    //  MARK: HELPERMETHODS
+    
+    func removeRows(at offsets: IndexSet) {
+        
+        numbersArray.remove(atOffsets : offsets)
+    } // Deleting items from a list : STEP 2 of 5
 }
 
 

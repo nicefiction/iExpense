@@ -30,10 +30,10 @@ import Foundation
 
 // struct Human {
 // class Human {
-class Human: ObservableObject { // STEP 1 of 3
+class Human: ObservableObject { // Implementing the Observable protocol : STEP 1 of 3
     
     // var firstName: String = "Dorothy"
-    @Published var firstName: String = "Dorothy" // STEP 2 of 3
+    @Published var firstName: String = "Dorothy" // Implementing the Observable protocol : STEP 2 of 3
     // var lastName: String = "Gale"
     @Published var lastName: String = "Gale"
 }
