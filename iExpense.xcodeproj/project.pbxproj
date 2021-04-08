@@ -15,6 +15,8 @@
 		094E95BA261DA45000DBE4B3 /* HumanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094E95B9261DA45000DBE4B3 /* HumanView.swift */; };
 		094E95BE261DA57C00DBE4B3 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094E95BD261DA57C00DBE4B3 /* SecondView.swift */; };
 		09A050CC261DB2FF0053F5DD /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A050CB261DB2FF0053F5DD /* FirstView.swift */; };
+		09A050CF261F68ED0053F5DD /* DeletingItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A050CE261F68ED0053F5DD /* DeletingItems.swift */; };
+		09A050D2261F831F0053F5DD /* StoringUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A050D1261F831F0053F5DD /* StoringUserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		094E95B9261DA45000DBE4B3 /* HumanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanView.swift; sourceTree = "<group>"; };
 		094E95BD261DA57C00DBE4B3 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 		09A050CB261DB2FF0053F5DD /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		09A050CE261F68ED0053F5DD /* DeletingItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletingItems.swift; sourceTree = "<group>"; };
+		09A050D1261F831F0053F5DD /* StoringUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoringUserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 				094E95B9261DA45000DBE4B3 /* HumanView.swift */,
 				094E95BD261DA57C00DBE4B3 /* SecondView.swift */,
 				09A050CB261DB2FF0053F5DD /* FirstView.swift */,
+				09A050CE261F68ED0053F5DD /* DeletingItems.swift */,
+				09A050D1261F831F0053F5DD /* StoringUserDefaults.swift */,
 			);
 			path = DAY26;
 			sourceTree = "<group>";
@@ -161,6 +167,8 @@
 				094E95A8261D8F7100DBE4B3 /* ContentView.swift in Sources */,
 				09A050CC261DB2FF0053F5DD /* FirstView.swift in Sources */,
 				094E95BE261DA57C00DBE4B3 /* SecondView.swift in Sources */,
+				09A050CF261F68ED0053F5DD /* DeletingItems.swift in Sources */,
+				09A050D2261F831F0053F5DD /* StoringUserDefaults.swift in Sources */,
 				094E95B6261D925500DBE4B3 /* Human.swift in Sources */,
 				094E95BA261DA45000DBE4B3 /* HumanView.swift in Sources */,
 				094E95A6261D8F7100DBE4B3 /* iExpenseApp.swift in Sources */,
