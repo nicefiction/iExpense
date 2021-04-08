@@ -1,4 +1,13 @@
 //  UserDefaults.swift
+// Source : https://www.hackingwithswift.com/books/ios-swiftui/storing-user-settings-with-userdefaults
+/**
+ `UserDefaults` is perfect for
+ storing user settings
+ and other important data
+ – you might track when the user last launched the app ,
+ which news story they last read ,
+ or other passively collected information .
+ */
 
 import SwiftUI
 
@@ -29,15 +38,7 @@ struct StoringUserDefaults: View {
     }
 }
 
-/*
- Button(action : {
-     tapCount += 1
-     UserDefaults.standard.set(self.tapCount ,
-                               forKey : "Tap")
- } , label : {
-     Text("Tap Count : \(tapCount)")
- })
- */
+
 
 
 
