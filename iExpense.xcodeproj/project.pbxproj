@@ -18,6 +18,8 @@
 		09A050CF261F68ED0053F5DD /* DeletingItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A050CE261F68ED0053F5DD /* DeletingItems.swift */; };
 		09A050D2261F831F0053F5DD /* StoringUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A050D1261F831F0053F5DD /* StoringUserDefaults.swift */; };
 		09A050D6261F89670053F5DD /* ArchivingObjectsWithCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A050D5261F89670053F5DD /* ArchivingObjectsWithCodable.swift */; };
+		09A050D926203E4B0053F5DD /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A050D826203E4B0053F5DD /* ExpenseItem.swift */; };
+		09A050DC26203EC50053F5DD /* ExpenseItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A050DB26203EC50053F5DD /* ExpenseItems.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		09A050CE261F68ED0053F5DD /* DeletingItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletingItems.swift; sourceTree = "<group>"; };
 		09A050D1261F831F0053F5DD /* StoringUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoringUserDefaults.swift; sourceTree = "<group>"; };
 		09A050D5261F89670053F5DD /* ArchivingObjectsWithCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingObjectsWithCodable.swift; sourceTree = "<group>"; };
+		09A050D826203E4B0053F5DD /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
+		09A050DB26203EC50053F5DD /* ExpenseItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItems.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +71,10 @@
 			isa = PBXGroup;
 			children = (
 				094E95A5261D8F7100DBE4B3 /* iExpenseApp.swift */,
-				094E95C1261DA63D00DBE4B3 /* DAY26 */,
+				094E95C1261DA63D00DBE4B3 /* DAY36 */,
 				094E95A7261D8F7100DBE4B3 /* ContentView.swift */,
+				09A050D826203E4B0053F5DD /* ExpenseItem.swift */,
+				09A050DB26203EC50053F5DD /* ExpenseItems.swift */,
 				094E95A9261D8F7500DBE4B3 /* Assets.xcassets */,
 				094E95AE261D8F7500DBE4B3 /* Info.plist */,
 				094E95AB261D8F7500DBE4B3 /* Preview Content */,
@@ -84,7 +90,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		094E95C1261DA63D00DBE4B3 /* DAY26 */ = {
+		094E95C1261DA63D00DBE4B3 /* DAY36 */ = {
 			isa = PBXGroup;
 			children = (
 				094E95B5261D925500DBE4B3 /* Human.swift */,
@@ -95,7 +101,7 @@
 				09A050D1261F831F0053F5DD /* StoringUserDefaults.swift */,
 				09A050D5261F89670053F5DD /* ArchivingObjectsWithCodable.swift */,
 			);
-			path = DAY26;
+			path = DAY36;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +180,8 @@
 				09A050D6261F89670053F5DD /* ArchivingObjectsWithCodable.swift in Sources */,
 				09A050D2261F831F0053F5DD /* StoringUserDefaults.swift in Sources */,
 				094E95B6261D925500DBE4B3 /* Human.swift in Sources */,
+				09A050D926203E4B0053F5DD /* ExpenseItem.swift in Sources */,
+				09A050DC26203EC50053F5DD /* ExpenseItems.swift in Sources */,
 				094E95BA261DA45000DBE4B3 /* HumanView.swift in Sources */,
 				094E95A6261D8F7100DBE4B3 /* iExpenseApp.swift in Sources */,
 			);
