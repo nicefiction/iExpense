@@ -35,8 +35,7 @@ struct AddExpenseItem: View {
                     TextField("Item name ..." , text : $name)
                 }
                 Section(header : Text("Item type :")) {
-                    Picker("Item type" ,
-                           selection : $selectedType) {
+                    Picker("Item type" , selection : $selectedType) {
                         // ForEach(AddExpenseItem.itemTypes , id : \.self) {
                         ForEach(Self.itemTypes , id : \.self) {
                             Text($0)
@@ -50,8 +49,17 @@ struct AddExpenseItem: View {
                         .keyboardType(.numberPad)
                 }
             }
-            .navigationBarTitle("Add a new expense :" ,
-                                displayMode: .inline)
+            .navigationTitle("Create a new Item")
+            .navigationBarItems(trailing : Button(action : {
+                if let _amount = Int(amount) {
+                    let expenseItem = ExpenseItem(name : name ,
+                                                  type : selectedType ,
+                                                  amount : _amount)
+                    expenseItems.list.append(expenseItem)
+                }
+            } , label : {
+                Text("Save item")
+            }))
         }
     }
 }

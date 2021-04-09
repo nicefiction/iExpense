@@ -27,7 +27,7 @@ struct ContentView: View {
                  Because `ExpenseItem` conforms to the `Identifiable` protocol
                  and has `id: UUID = UUID()` implemented ,
                  we no longer need to write `id : \.name` in the `ForEach` View .
-                 `ForEach`knows there will be an id property
+                 `ForEach`knows there will be an `id` property
                  and that it will be unique ,
                  because that is the point of the `Identifiable` protocol :
                  */
@@ -38,10 +38,6 @@ struct ContentView: View {
             }
             .navigationTitle("iExpense")
             .navigationBarItems(trailing : Button(action : {
-//                let expenseItem = ExpenseItem(name : "Test Item" ,
-//                                              type : "Personal" ,
-//                                              amount : 5)
-//                expenses.list.append(expenseItem)
                 isShowingAddExpenseItemView.toggle()
             } , label : {
                 Image(systemName: "plus.circle")
