@@ -9,6 +9,8 @@ struct AddExpenseItem: View {
      // ////////////////////////
     //  MARK: PROPERTY WRAPPERS
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @ObservedObject var expenseItems: ExpenseItems
     
     @State private var name: String = "Another Item"
@@ -56,6 +58,8 @@ struct AddExpenseItem: View {
                                                   type : selectedType ,
                                                   amount : _amount)
                     expenseItems.list.append(expenseItem)
+                    
+                    presentationMode.wrappedValue.dismiss()
                 }
             } , label : {
                 Text("Save item")

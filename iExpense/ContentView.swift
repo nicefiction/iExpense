@@ -32,7 +32,19 @@ struct ContentView: View {
                  because that is the point of the `Identifiable` protocol :
                  */
                 ForEach(expenses.list) { (item: ExpenseItem) in
-                    return Text(item.name)
+                    // return Text(item.name)
+                    HStack {
+                        VStack(alignment : .leading) {
+                            Text(item.name)
+                                .font(.headline)
+                            Text(item.type)
+                                .foregroundColor(.gray)
+                        }
+                        Spacer()
+                        Text("$ \(item.amount)")
+                            .font(.title)
+                            .padding(.horizontal)
+                    }
                 }
                 .onDelete(perform : removeItems)
             }
