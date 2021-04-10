@@ -16,6 +16,7 @@ struct AddExpenseItem: View {
     @State private var name: String = "Another Item"
     @State private var selectedType: String = "personal"
     @State private var amount: String = "5"
+    @State private var isShowingInvalidDataAlert: Bool = false
     
     
     
@@ -52,18 +53,27 @@ struct AddExpenseItem: View {
                 }
             }
             .navigationTitle("Create a new Item")
-            .navigationBarItems(trailing : Button(action : {
-                if let _amount = Int(amount) {
-                    let expenseItem = ExpenseItem(name : name ,
-                                                  type : selectedType ,
-                                                  amount : _amount)
-                    expenseItems.list.append(expenseItem)
-                    
-                    presentationMode.wrappedValue.dismiss()
-                }
-            } , label : {
-                Text("Save item")
-            }))
+            .navigationBarItems(
+                trailing : Button(action : {
+                    if let _amount = Int(amount) {
+                        let expenseItem = ExpenseItem(name : name ,
+                                                      type : selectedType ,
+                                                      amount : _amount)
+                        expenseItems.list.append(expenseItem)
+                        
+                        presentationMode.wrappedValue.dismiss()
+                    } else {
+                        isShowingInvalidDataAlert.toggle()
+                    }
+                } , label : {
+                    Text("Save item")
+                })
+            )
+            .alert(isPresented: $isShowingInvalidDataAlert) {
+                Alert(title : Text("Invalid data .") ,
+                      message : Text("Enter a number .") ,
+                      dismissButton : .default(Text("Cancel")))
+            }
         }
     }
 }
