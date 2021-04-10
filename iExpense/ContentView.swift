@@ -21,40 +21,44 @@ struct ContentView: View {
     var body: some View {
         
         NavigationView {
-            List {
-                // ForEach(expenses.list , id : \.name) { (item: ExpenseItem) in
-                /**
-                 Because `ExpenseItem` conforms to the `Identifiable` protocol
-                 and has `id: UUID = UUID()` implemented ,
-                 we no longer need to write `id : \.name` in the `ForEach` View .
-                 `ForEach`knows there will be an `id` property
-                 and that it will be unique ,
-                 because that is the point of the `Identifiable` protocol :
-                 */
-                ForEach(expenses.list) { (item: ExpenseItem) in
-                    // return Text(item.name)
-                    HStack {
-                        VStack(alignment : .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text(item.type)
-                                .foregroundColor(.gray)
+            VStack { // ⚠️ OLIVIER : You need a VStack to make the EditButton() display the icons when in Edit mode .
+                List {
+                    // ForEach(expenses.list , id : \.name) { (item: ExpenseItem) in
+                    /**
+                     Because `ExpenseItem` conforms to the `Identifiable` protocol
+                     and has `id: UUID = UUID()` implemented ,
+                     we no longer need to write `id : \.name` in the `ForEach` View .
+                     `ForEach`knows there will be an `id` property
+                     and that it will be unique ,
+                     because that is the point of the `Identifiable` protocol :
+                     */
+                    ForEach(expenses.list) { (item: ExpenseItem) in
+                        // return Text(item.name)
+                        HStack {
+                            VStack(alignment : .leading) {
+                                Text(item.name)
+                                    .font(.headline)
+                                Text(item.type)
+                                    .foregroundColor(.gray)
+                            }
+                            Spacer()
+                            Text("$ \(item.amount)")
+                                .font(.title)
+                                .padding(.horizontal)
                         }
-                        Spacer()
-                        Text("$ \(item.amount)")
-                            .font(.title)
-                            .padding(.horizontal)
                     }
+                    .onDelete(perform : removeItems)
                 }
-                .onDelete(perform : removeItems)
             }
             .navigationTitle("iExpense")
-            .navigationBarItems(trailing : Button(action : {
-                isShowingAddExpenseItemView.toggle()
-            } , label : {
-                Image(systemName: "plus.circle")
-                    .font(.largeTitle)
-            }))
+            .navigationBarItems(
+                leading : EditButton() ,
+                trailing : Button(action : {
+                    isShowingAddExpenseItemView.toggle()
+                } , label : {
+                    Text("Add Expense Item")
+                })
+            )
             .sheet(isPresented : $isShowingAddExpenseItemView) {
                 AddExpenseItem(expenseItems : self.expenses)
             }
