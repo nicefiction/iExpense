@@ -45,6 +45,7 @@ struct ContentView: View {
                             Text("$ \(item.amount)")
                                 .font(.title)
                                 .padding(.horizontal)
+                                .foregroundColor(styleTextColor(with : item.amount))
                         }
                     }
                     .onDelete(perform : removeItems)
@@ -73,6 +74,19 @@ struct ContentView: View {
     func removeItems(at offsets: IndexSet) {
         
         expenses.list.remove(atOffsets : offsets)
+    }
+    
+    
+    func styleTextColor(with color : Int)
+    -> Color {
+        
+        switch color {
+        
+        case 1..<10 : return .green
+        case 10..<20 : return .orange
+        case 20..<100 : return .red
+        default : return .blue
+        }
     }
 }
 
